@@ -5,7 +5,7 @@ const Dev = require('./models/Dev');
 const routes = Router();
 
 routes.post('/devs', async (req, res) => {
-    const { github_username, techs } = req.body;
+    const { github_username, techs, latitude, longitude } = req.body;
     
     const response = await axios.get(`https://api.github.com/users/${github_username}`);
 
@@ -14,13 +14,19 @@ routes.post('/devs', async (req, res) => {
 
     const techsArray = techs.split(',').map(tech => tech.trim());
 
+    const location = {
+        type: 'Point',
+        coordinates: [longitude, latitude]
+    }
+
     // Short syntax, quando a propriedade e o valor tem a mesma denominação
     const dev = await Dev.create({
         github_username,
         name,
         bio,
         avatar_url,
-        techs: techsArray
+        techs: techsArray,
+        location
     });
 
     return res.json({ dev });
