@@ -9,7 +9,7 @@ mongoose.connect('mongodb+srv://devradar:devradar@cluster0-z0shr.mongodb.net/tes
     useUnifiedTopology: true
 });
 
-app.use(express.json);
+app.use(express.json());
 app.use(routes);
 
 app.listen(3333);
