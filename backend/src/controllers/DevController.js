@@ -1,5 +1,6 @@
 const axios = require('axios');
 const Dev = require('../models/Dev');
+const parser = require('../utils/parser');
 
 module.exports = {
     async index(req, res){
@@ -19,7 +20,7 @@ module.exports = {
             // Se name n existir, recebe o login por padrão
             const {avatar_url, name = login, bio} = response.data;
         
-            const techsArray = techs.split(',').map(tech => tech.trim());
+            const techsArray = parser(techs);
         
             const location = {
                 type: 'Point',
