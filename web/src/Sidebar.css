@@ -25,7 +25,7 @@ aside form .input-group {
     margin-top: 20px;
     display: grid;
     gap: 20px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;     /* Dividi o layout em 2 areas flexiveis */
 }
 
 aside form .input-group .input-block {
@@ -59,9 +59,9 @@ aside form button[type=submit] {
     font-weight: bold;
     color: #fff;
     cursor: pointer;
-    transition: background 0.5s;
+    transition: background 0.5s;    /* Tempo de transição para a troca de cor do background */
 }
 
-aside form button[type=submit] {
+aside form button[type=submit]:hover {
     background: #6931ca;
 }

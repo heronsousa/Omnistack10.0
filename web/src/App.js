@@ -3,6 +3,7 @@ import React from 'react';
 import './global.css';
 import './App.css';
 import './Sidebar.css';
+import './Main.css';
 
 function App() {
   return (
@@ -37,7 +38,55 @@ function App() {
       </aside>
 
       <main>
+        <ul>
+          <li className="dev-item">
+            <header>
+              <img src="https://avatars1.githubusercontent.com/u/37983059?s=460&v=4" alt="Heron Rodrigues"/>
+              <div className="user-info">
+                <strong>Heron Rodrigues</strong>
+                <span>ReactJS, Node.js</span>
+              </div>
+            </header>
+            <p>Graduando do curso Engenharia de Software na Universidade de Brasília - UnB</p>
+            <a href="https://github.com/heronsousa">Acessar perfil no Github</a>
+          </li>
 
+          <li className="dev-item">
+            <header>
+              <img src="https://avatars1.githubusercontent.com/u/37983059?s=460&v=4" alt="Heron Rodrigues"/>
+              <div className="user-info">
+                <strong>Heron Rodrigues</strong>
+                <span>ReactJS, Node.js</span>
+              </div>
+            </header>
+            <p>Graduando do curso Engenharia de Software na Universidade de Brasília - UnB</p>
+            <a href="https://github.com/heronsousa">Acessar perfil no Github</a>
+          </li>
+
+          <li className="dev-item">
+            <header>
+              <img src="https://avatars1.githubusercontent.com/u/37983059?s=460&v=4" alt="Heron Rodrigues"/>
+              <div className="user-info">
+                <strong>Heron Rodrigues</strong>
+                <span>ReactJS, Node.js</span>
+              </div>
+            </header>
+            <p>Graduando do curso Engenharia de Software na Universidade de Brasília - UnB</p>
+            <a href="https://github.com/heronsousa">Acessar perfil no Github</a>
+          </li>
+
+          <li className="dev-item">
+            <header>
+              <img src="https://avatars1.githubusercontent.com/u/37983059?s=460&v=4" alt="Heron Rodrigues"/>
+              <div className="user-info">
+                <strong>Heron Rodrigues</strong>
+                <span>ReactJS, Node.js</span>
+              </div>
+            </header>
+            <p>Graduando do curso Engenharia de Software na Universidade de Brasília - UnB</p>
+            <a href="https://github.com/heronsousa">Acessar perfil no Github</a>
+          </li>
+        </ul>
       </main>
     </div>
   );
