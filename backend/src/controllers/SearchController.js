@@ -24,8 +24,6 @@ module.exports = {
             }
         });
 
-        console.log(techsArray);
-
         return res.json({ devs });
     }
 }
