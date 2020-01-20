@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Image, Text, View } from 'react-native';
+import { StyleSheet, Image, Text, View, TextInput } from 'react-native';
 import MapView, { Marker, Callout } from 'react-native-maps';
 import { requestPermissionsAsync, getCurrentPositionAsync } from 'expo-location';
 
-function Main() {
+function Main({ navigation }) {
     const [currentRegion, setCurrentRegion] = useState(null);
 
     useEffect(() => {
@@ -35,11 +35,14 @@ function Main() {
     }
 
     return (
-        <MapView initialRegion={currentRegion} style={styles.map}>
+        <>
+            <MapView initialRegion={currentRegion} style={styles.map}>
             <Marker coordinate={{ latitude: -16.0252124, longitude: -48.055769 }}>
                 <Image style={styles.avatar} source={{ uri: 'https://avatars1.githubusercontent.com/u/37983059?s=460&v=4' }} />
 
-                <Callout>
+                <Callout onPress={() => {
+                    navigation.navigate('Profile', { github_username: 'heronsousa' })
+                }}>
                     <View style={styles.callout}>
                         <Text style={styles.name}>Heron Rodrigues</Text>
                         <Text style={styles.bio}>Graduando em Engenharia de Software</Text>
@@ -48,6 +51,12 @@ function Main() {
                 </Callout>
             </Marker>
         </MapView>
+            <View>
+                <TextInput
+                
+                />
+            </View>
+        </>
     );
 }
 
