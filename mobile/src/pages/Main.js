@@ -37,7 +37,7 @@ function Main({ navigation }) {
     }, []);
 
     function setupWebSocket() {
-        
+        connect();
     }
 
     async function loadDevs() {
@@ -52,7 +52,7 @@ function Main({ navigation }) {
         });
 
         setDevs(response.data.devs);
-        connect();   //Quando for procurar por devs, inicia conexão com socket
+        setupWebSocket();   //Quando for procurar por devs, inicia conexão com socket
     }
 
     function handleRegionChanged(region) {
