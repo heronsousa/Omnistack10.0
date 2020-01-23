@@ -4,8 +4,10 @@ const calculateDistance = require('./utils/calculateDistance');
 
 const connections = [];
 
+let io;
+
 exports.setupWebSocket = (server) => {
-    const io = socketio(server);
+    io = socketio(server);
 
     io.on('connection', (socket) => {
         const { latitude, longitude, techs } = socket.handshake.query;
@@ -31,6 +33,6 @@ exports.findConnections = (coordinates, techs) => {
 
 exports.sendMessage = (to, typeMessage, data) =>{
     to.forEach(connection => {
-        io.to(connection.id).emit(message, data);
+        io.to(connection.id).emit(typeMessage, data);
     })
 }
